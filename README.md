@@ -15,11 +15,11 @@ To evalute COW quantitatively, we have to <ins>detect landmarks which cover COW 
 
 💥**I dot landmarks on brain artery by myself** so I can not open landmarks data.
 
-The first try is method using CNN to regress landmark positions.
+1️⃣ The first try is method using CNN to regress landmark positions.
 
-The second try is method using GNN (Graph Neural Network).
+2️⃣ The second try is method using [GNN (Graph Neural Network)](https://github.com/9B8DY6/Landmark-detection-in-TOF-MRA/blob/main/GNN_implementation.ipynb).
  - (reference : [Structured Landmark Detection via Topology-Adapting Deep Graph Learning](https://arxiv.org/abs/2004.08190))
+ - Motivation : Brain artery is connected with vessels. Let's consider landmarks as node and vessels as edge. Then, a model learns correlation between landmarks with image feature implying that MRA is the image that shows vessel path and connection. 
  - When I wrote this code, there is no github of reference. I did it only based on paper. 
- - 💛Why I try : Brain artery is connected with vessels. Let's consider landmarks as node and vessels as edge. Then, a model learns correlation between landmarks with image feature implying that MRA is the image that shows vessel path and connection. 
 
 The relationship between nodes is crucial in second method so, the more landmarks, the better it will be.
