@@ -1,12 +1,25 @@
 # Landmark-detection-in-TOF-MRA
-뇌혈관 정량적 분석을 위한 첫걸음
+The basic step for quantitative analysis of brain artery.
 
-뇌혈관 정량적 분석을 위해 뇌혈관의 landmark를 찍어서 이를 detect하는 과정을 진행해보았다.
-1. CNN을 이용한 regression적인 방법
+## MRA ?
+<img src="https://github.com/9B8DY6/Landmark-detection-in-TOF-MRA/assets/67573223/c48866f1-f6a5-4936-a9eb-06c12c1eab50" width=140, height=160>
 
-2. GNN을 이용한 방법(reference : Structured Landmark Detection via Topology-Adapting Deep Graph Learning; 	arXiv:2004.08190 [cs.CV])
+MRA is an abbreviation of Magnetic Resonance Angiography to image blood vessels, especially in brain. 
+It is used to evaluate them for stenosis (abnormal narrowing), occlusions, aneurysms (vessel wall dilatations, at risk of rupture) or other abnormalities. 
+The main part of brain artery is called as COW (Circle of Willis). 
 
-2번의 방법은 landmark로 보는 node들 간의 관계성이 매우 중요해서 점이 많으면 의미가 있는 결과가 나올 것으로 기대한다.
-*그러나 2번을 코드 빌리는 것 없이 나만의 코딩으로 만들었다는 것에 의의를 둔다. *
-점의 개수가 작기 때문에 1번이 충분히 좋은 결과가 나올 수 있다.
+From [wiki](https://en.wikipedia.org/wiki/Magnetic_resonance_angiography)
 
+## Purpose
+To evalute COW quantitatively, we have to <ins>detect landmarks which cover COW and needs quantitative analysis like how much narrow the vessel is</ins>.  
+
+💥**I dot landmarks on brain artery by myself** so I can not open landmarks data.
+
+The first try is method using CNN to regress landmark positions.
+
+The second try is method using GNN (Graph Neural Network).
+ - (reference : [Structured Landmark Detection via Topology-Adapting Deep Graph Learning](https://arxiv.org/abs/2004.08190))
+ - When I wrote this code, there is no github of reference. I did it only based on paper. 
+ - 💛Why I try : Brain artery is connected with vessels. Let's consider landmarks as node and vessels as edge. Then, a model learns correlation between landmarks with image feature implying that MRA is the image that shows vessel path and connection. 
+
+The relationship between nodes is crucial in second method so, the more landmarks, the better it will be.
