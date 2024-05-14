@@ -19,6 +19,9 @@ To evalute COW quantitatively, we have to <ins>detect landmarks which cover COW<
 1️⃣ The first try is method using [CNN to regress landmark positions](https://github.com/9B8DY6/Landmark-detection-in-TOF-MRA/blob/main/mip_axial_for_CNN.ipynb).
 
 2️⃣ The second try is method using [GNN (Graph Neural Network)](https://github.com/9B8DY6/Landmark-detection-in-TOF-MRA/blob/main/GNN_implementation.ipynb).
+
+<img src="https://github.com/9B8DY6/Landmark-detection-in-TOF-MRA/assets/67573223/7af41979-6ee9-49c1-9816-c048abea05d6" width=300, height=180>
+
  - (reference : [Structured Landmark Detection via Topology-Adapting Deep Graph Learning](https://arxiv.org/abs/2004.08190))
  - Motivation : If we consider landmarks as node and vessels as edge, cerebral vasculature is one big graph of which nodes on vessels are only connected to other nodes along with vessel. Then, a model learns correlation between landmarks with MRA image feature which shows that cerebral vessel is big one graph. 
  - When I wrote this code, there is no github of reference. I did it only based on paper. 
